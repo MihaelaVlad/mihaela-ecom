@@ -5,12 +5,12 @@ const ContactPage = () => {
   return (
     <>
       <Head>
-        <title>Contact us</title>
+        <title>About us</title>
       </Head>
 
       <Layout>
         <main>
-          <h1>Contact us</h1>
+          <h1>About us</h1>
         </main>
       </Layout>
     </>
