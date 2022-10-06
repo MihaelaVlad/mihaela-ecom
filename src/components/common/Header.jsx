@@ -61,11 +61,11 @@ export const Header = () => {
       </section>
 
       <nav
-        className={`absolute left-0 ${
-          menuOpen ? 'top-0' : '-top-full'
-        } h-screen w-screen lg:w-1/2 text-white bg-neutral-900 ease-in-out duration-500`}
+        className={`absolute left-0 -top-full transition-transform duration-500 ${
+          menuOpen ? 'translate-y-full' : ''
+        } h-screen w-screen lg:w-screen-1/3 text-white bg-neutral-900 pl-36`}
       >
-        <ul className="flex flex-col items-center justify-center gap-y-5 h-screen text-2xl uppercase">
+        <ul className="flex flex-col items-start justify-center gap-y-5 h-screen text-2xl uppercase">
           <li className="hover:text-amber-600">
             <Link href="/">
               <a title="Home">Home</a>
@@ -84,10 +84,6 @@ export const Header = () => {
             </Link>
           </li>
         </ul>
-        {/*
-        <button className="text-white" title="Close" type="button">
-          <CgClose size="32"></CgClose>
-        </button> */}
       </nav>
     </>
   );
