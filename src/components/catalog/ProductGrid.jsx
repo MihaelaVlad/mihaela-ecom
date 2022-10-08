@@ -1,8 +1,15 @@
 import { css } from '@emotion/css';
+import { motion } from 'framer-motion';
 
 export const ProductGrid = ({ products = [], perRow = 4 }) => {
   if (products.length <= 0) {
-    return <>There are no products</>;
+    return (
+      <>
+        <div className="flex items-center justify-center bg-amber-600 text-white text-center font-bold text-xl p-6">
+          There are no products
+        </div>
+      </>
+    );
   }
 
   const gridCss = css`
@@ -21,8 +28,13 @@ export const ProductGrid = ({ products = [], perRow = 4 }) => {
         const { title, price, image } = product;
 
         return (
-          <li key={index}>
-            <article className="w-full">
+          <motion.li
+            animate={{ opacity: 1 }}
+            layout="position"
+            whileHover={{ scale: 1.1 }}
+            key={index}
+          >
+            <article className="w-full cursor-pointer">
               <header>
                 <div className="w-full h-72 text-center">
                   <img src={image} className="h-full inline"></img>
@@ -35,7 +47,7 @@ export const ProductGrid = ({ products = [], perRow = 4 }) => {
                 <div className="text-zinc-900 font-light">{price}</div>
               </section>
             </article>
-          </li>
+          </motion.li>
         );
       })}
     </ul>

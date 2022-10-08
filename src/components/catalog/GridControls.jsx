@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { BsGrid } from 'react-icons/bs';
+import { BiRectangle } from 'react-icons/bi';
 
-const buttonClasses = `w-24 h-24 border-l border-zinc-400 flex justify-center items-center`;
+const buttonClasses = `w-20 h-20 border-l border-zinc-400 flex justify-center items-center`;
 
 export const GridControls = ({ setPerRow = () => {} }) => {
   const [itemsPerRow, setItemsPerRow] = useState('1/row');
@@ -20,12 +22,12 @@ export const GridControls = ({ setPerRow = () => {} }) => {
           title="One per row"
           className={`${buttonClasses} ${
             itemsPerRow === '1/row' ? 'bg-black text-white' : ''
-          }`}
+          } hover:text-amber-600`}
           onClick={() => {
             setItemsPerRow('1/row');
           }}
         >
-          1
+          <BiRectangle size="32"></BiRectangle>
         </button>
       </li>
 
@@ -34,12 +36,13 @@ export const GridControls = ({ setPerRow = () => {} }) => {
           title="Two per row"
           className={`${buttonClasses} ${
             itemsPerRow === '2/row' ? 'bg-black text-white' : ''
-          }`}
+          }hover:text-amber-600`}
           onClick={() => {
             setItemsPerRow('2/row');
           }}
         >
-          2
+          <BiRectangle size="22"></BiRectangle>
+          <BiRectangle size="22"></BiRectangle>
         </button>
       </li>
 
@@ -48,12 +51,12 @@ export const GridControls = ({ setPerRow = () => {} }) => {
           title="Four per row"
           className={`${buttonClasses} ${
             itemsPerRow === '4/row' ? 'bg-black text-white' : ''
-          }`}
+          }hover:text-amber-600`}
           onClick={() => {
             setItemsPerRow('4/row');
           }}
         >
-          4
+          <BsGrid size="32"></BsGrid>
         </button>
       </li>
     </ul>

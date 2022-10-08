@@ -14,7 +14,7 @@ export const Header = () => {
     <>
       <section className="flex lg:flex-col justify-between items-center h-full z-10 relative lg:py-8">
         <Link href="/">
-          <a title="Home">
+          <a title="Home" className="hover:text-amber-600">
             <FaApple size="32"></FaApple>
           </a>
         </Link>
@@ -25,6 +25,7 @@ export const Header = () => {
           onClick={() => {
             setMenuOpen(!menuOpen);
           }}
+          className="hover:text-amber-600"
         >
           {menuOpen ? (
             <CgClose size="32"></CgClose>
@@ -36,7 +37,7 @@ export const Header = () => {
         <ul className="hidden lg:flex flex-col justify-between items-center gap-6">
           <li className="hover:text-amber-600">
             <Link href="https://www.facebook.com/">
-              <a title="Facebook">
+              <a title="Facebook" target="_blank" rel="noopener noreferrer">
                 <CgFacebook size="20"></CgFacebook>
               </a>
             </Link>
@@ -44,7 +45,7 @@ export const Header = () => {
 
           <li className="hover:text-amber-600">
             <Link href="https://www.twitter.com/">
-              <a title="Twitter">
+              <a title="Twitter" target="_blank" rel="noopener noreferrer">
                 <VscTwitter size="20"></VscTwitter>
               </a>
             </Link>
@@ -52,7 +53,7 @@ export const Header = () => {
 
           <li className="hover:text-amber-600">
             <Link href="https://www.google.com/">
-              <a title="Google">
+              <a title="Google" target="_blank" rel="noopener noreferrer">
                 <CgGoogle size="20"></CgGoogle>
               </a>
             </Link>
@@ -63,9 +64,9 @@ export const Header = () => {
       <nav
         className={`absolute left-0 -top-full transition-transform duration-500 ${
           menuOpen ? 'translate-y-full' : ''
-        } h-screen w-screen lg:w-screen-1/3 text-white bg-neutral-900 pl-36`}
+        } h-screen w-screen lg:w-screen-1/3 text-white bg-neutral-900 lg:pl-36`}
       >
-        <ul className="flex flex-col items-start justify-center gap-y-5 h-screen text-2xl uppercase">
+        <ul className="flex flex-col items-center lg:items-start justify-center gap-y-5 h-screen text-2xl uppercase">
           <li className="hover:text-amber-600">
             <Link href="/">
               <a title="Home">Home</a>

@@ -1,15 +1,19 @@
+import { BackToTop } from './footer/BackToTop';
+import { Copyright } from './footer/Copyright';
+import { FooterInfo } from './footer/FooterInfo';
+
 export const Footer = () => {
   return (
     <>
-      <section className="container px-4 lg:px-0 mx-auto">
-        tigdsfidsfmdsjnfjkdsnkfjndskjfjd
-      </section>
-      <section className="container px-4 lg:px-0 mx-auto">
-        tigdsfidsfmdsjnfjkdsnkfjndskjfjd
-      </section>
-      <section className="container px-4 lg:px-0 mx-auto">
-        tigdsfidsfmdsjnfjkdsnkfjndskjfjd
-      </section>
+      <div className="container px-4 lg:px-0 mx-auto flex flex-col gap-y-10 pt-24 pb-10 -z-20">
+        <FooterInfo></FooterInfo>
+      </div>
+
+      <BackToTop></BackToTop>
+
+      <div className="container px-4 lg:px-0 mx-auto flex flex-col gap-y-10 pt-24 pb-10 -z-20">
+        <Copyright></Copyright>
+      </div>
     </>
   );
 };
