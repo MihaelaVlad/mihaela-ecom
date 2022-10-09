@@ -14,8 +14,18 @@ export const FooterInfo = () => {
               145 Oliveshka Street,
               <span className="block">Los Angeles, LA 90003</span>
             </li>
-            <li>+44 987 065 901</li>
-            <li>info@Example.com</li>
+
+            <li className="hover:text-amber-600">
+              <Link href="tel:+44 987 065 901">
+                <a title="+44 987 065 901">+44 987 065 901</a>
+              </Link>
+            </li>
+
+            <li className="hover:text-amber-600">
+              <Link href="mailto:info@Example.com">
+                <a title="info@Example.com">info@Example.com</a>
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -29,8 +39,18 @@ export const FooterInfo = () => {
               210 Pier Street,
               <span className="block">San Francisco, CA 94111</span>
             </li>
-            <li>+44 987 065 902</li>
-            <li>info@Example.com</li>
+
+            <li className="hover:text-amber-600">
+              <Link href="tel:+44 987 065 902">
+                <a title="+44 987 065 902">+44 987 065 902</a>
+              </Link>
+            </li>
+
+            <li className="hover:text-amber-600">
+              <Link href="mailto:info@Example.com">
+                <a title="info@Example.com">info@Example.com</a>
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -44,8 +64,18 @@ export const FooterInfo = () => {
               711 Snow Street,
               <span className="block">New York, NY 10014</span>
             </li>
-            <li>+44 987 065 903</li>
-            <li>info@Example.com</li>
+
+            <li className="hover:text-amber-600">
+              <Link href="tel:+44 987 065 903">
+                <a title="+44 987 065 903">+44 987 065 903</a>
+              </Link>
+            </li>
+
+            <li className="hover:text-amber-600">
+              <Link href="mailto:info@Example.com">
+                <a title="info@Example.com">info@Example.com</a>
+              </Link>
+            </li>
           </ul>
         </div>
 
