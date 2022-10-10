@@ -7,7 +7,7 @@ export const CartControl = () => {
       <li>
         <Link href="/cart">
           <a
-            className="w-20 h-20 flex justify-center items-center hover:text-amber-600"
+            className="w-20 h-20 flex justify-center items-center transition-colors hover:text-amber-600"
             title="Cart"
           >
             <RiShoppingCartFill size="32"></RiShoppingCartFill>

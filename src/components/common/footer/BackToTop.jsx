@@ -17,7 +17,7 @@ export const BackToTop = () => {
       >
         <button
           title="Back to top"
-          className="flex items-center justify-center hover:text-amber-600"
+          className="flex items-center justify-center transition-colors hover:text-amber-600"
           onClick={scrollSmooth}
         >
           <IoIosArrowDropup size="44" color="gray"></IoIosArrowDropup>

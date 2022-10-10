@@ -5,7 +5,7 @@ import { BiRectangle } from 'react-icons/bi';
 const buttonClasses = `w-20 h-20 border-l border-zinc-400 flex justify-center items-center`;
 
 export const GridControls = ({ setPerRow = () => {} }) => {
-  const [itemsPerRow, setItemsPerRow] = useState('1/row');
+  const [itemsPerRow, setItemsPerRow] = useState('4/row');
 
   // de fiecare data cand itemsPerRow se schimba
   // ruleaza acest callback
@@ -22,7 +22,7 @@ export const GridControls = ({ setPerRow = () => {} }) => {
           title="One per row"
           className={`${buttonClasses} ${
             itemsPerRow === '1/row' ? 'bg-black text-white' : ''
-          } hover:text-amber-600`}
+          } transition-colors hover:text-amber-600`}
           onClick={() => {
             setItemsPerRow('1/row');
           }}
@@ -36,7 +36,7 @@ export const GridControls = ({ setPerRow = () => {} }) => {
           title="Two per row"
           className={`${buttonClasses} ${
             itemsPerRow === '2/row' ? 'bg-black text-white' : ''
-          }hover:text-amber-600`}
+          }transition-colors hover:text-amber-600`}
           onClick={() => {
             setItemsPerRow('2/row');
           }}
@@ -51,7 +51,7 @@ export const GridControls = ({ setPerRow = () => {} }) => {
           title="Four per row"
           className={`${buttonClasses} ${
             itemsPerRow === '4/row' ? 'bg-black text-white' : ''
-          }hover:text-amber-600`}
+          }transition-colors hover:text-amber-600`}
           onClick={() => {
             setItemsPerRow('4/row');
           }}

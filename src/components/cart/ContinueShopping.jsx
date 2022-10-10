@@ -8,7 +8,7 @@ export const ContinueShopping = () => {
         <Link href="/">
           <motion.a
             title="Continue Shopping"
-            className="flex items-center justify-center bg-gray-900 text-white text-center font-bold text-xl p-4 hover:bg-amber-600 cursor-pointer"
+            className="flex items-center justify-center bg-gray-900 text-white text-center font-bold text-xl p-4 transition-colors hover:bg-amber-600 cursor-pointer"
             whileHover={{
               scale: 1.1,
               transition: { duration: 0.3 },
