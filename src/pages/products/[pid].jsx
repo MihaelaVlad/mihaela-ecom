@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { baseUrl } from '../..';
 import { CartControl } from '../../components/cart';
 import { Layout } from '../../layouts';
+import { BiLoaderCircle } from 'react-icons/bi';
 
 const ProductPage = () => {
   const router = useRouter();
@@ -25,7 +26,11 @@ const ProductPage = () => {
   }, [pid]);
 
   if (product === null) {
-    return <></>;
+    return (
+      <div className="flex h-screen w-screen justify-center items-center">
+        <BiLoaderCircle size="48" className="animate-spin"></BiLoaderCircle>
+      </div>
+    );
   }
 
   const { id, title, description, price, image } = product;
@@ -69,14 +74,14 @@ const ProductPage = () => {
 
               <div className="mt-12">
                 <button
-                  className="bg-black text-white uppercase font-medium text-sm py-3 px-6 transition-colors hover:bg-amber-600"
+                  className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-800 transition-colors"
                   title={`Add ${title} to cart`}
                   type="button"
                   onClick={() => {
                     alert(id);
                   }}
                 >
-                  Add to cart
+                  Add to Cart
                 </button>
               </div>
             </header>

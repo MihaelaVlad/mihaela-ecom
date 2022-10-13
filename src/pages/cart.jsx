@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { CartControl, ContinueShopping } from '../components/cart';
+import { CartControl } from '../components/cart';
+import { useCart } from '../hooks';
 import { Layout } from '../layouts';
 
 const Cart = () => {
@@ -10,18 +11,14 @@ const Cart = () => {
       </Head>
 
       <Layout>
-        <main className="container px-4 lg:px-0 mx-auto h-screen">
+        <main className="container px-4 lg:px-0 mx-auto">
           <header className="flex justify-between text-zinc-400">
             <div></div>
 
             <CartControl></CartControl>
           </header>
 
-          <div className="flex flex-col items-center justify-center">
-            <section className="my-16">cart goes here</section>
-
-            <ContinueShopping></ContinueShopping>
-          </div>
+          <section className="mt-16"></section>
         </main>
       </Layout>
     </>
