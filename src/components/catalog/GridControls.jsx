@@ -27,7 +27,7 @@ export const GridControls = ({ setPerRow = () => {} }) => {
             setItemsPerRow('1/row');
           }}
         >
-          <BiRectangle size="32"></BiRectangle>
+          <BiRectangle size="22"></BiRectangle>
         </button>
       </li>
 
