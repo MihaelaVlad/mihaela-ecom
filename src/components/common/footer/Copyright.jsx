@@ -3,7 +3,7 @@ export const Copyright = () => {
     <>
       <div>
         <span className="flex items-center justify-center">
-          © 2018. Created by Unvab.
+          © 2022. Created by Mihaela Vlad.
         </span>
       </div>
     </>

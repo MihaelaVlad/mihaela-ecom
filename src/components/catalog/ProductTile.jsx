@@ -10,7 +10,10 @@ export const ProductTile = ({ product }) => {
   }).format(price);
 
   return (
-    <motion.article className="w-full" layout="position">
+    <motion.article
+      className="w-full flex flex-col items-center justify-between gap-4"
+      layout="position"
+    >
       <header>
         <div className="w-full text-center">
           <Link href={`/products/${id}`}>
@@ -28,10 +31,23 @@ export const ProductTile = ({ product }) => {
         </div>
       </header>
 
-      <section className="mt-8 text-center text-sm">
+      <section className="mt-8 text-center text-sm flex flex-col items-center justify-between gap-4">
         <h1 className="uppercase text-zinc-400 mb-2">{title}</h1>
 
         <div className="text-zinc-900 font-light">{formattedPrice}</div>
+
+        <div>
+          <button
+            className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-600 transition-colors"
+            title={`Add ${title} to cart`}
+            type="button"
+            onClick={() => {
+              alert(id);
+            }}
+          >
+            Add to Cart
+          </button>
+        </div>
       </section>
     </motion.article>
   );

@@ -2,14 +2,13 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { CartControl } from '../components/cart';
 import { GridControls, Pagination, ProductGrid } from '../components/catalog';
-import { useCart, useProducts } from '../hooks';
+import { useProducts } from '../hooks';
 import { Layout } from '../layouts';
 
 const Home = () => {
   const [perRow, setPerRow] = useState(4);
   const [products] = useProducts();
   const [paginatedProducts, setPaginatedProducts] = useState([]);
-  const cart = useCart(2);
 
   // fara dependinte in array
   // efectul ruleaza la prima executie a functiei Home
@@ -25,7 +24,7 @@ const Home = () => {
           <header className="flex justify-end text-zinc-400">
             <GridControls setPerRow={setPerRow}></GridControls>
 
-            <CartControl cart={cart}></CartControl>
+            <CartControl></CartControl>
           </header>
 
           <section className="my-16">

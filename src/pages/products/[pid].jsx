@@ -2,9 +2,11 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { baseUrl } from '../..';
-import { CartControl } from '../../components/cart';
+import { CartControl, ContinueShopping } from '../../components/cart';
 import { Layout } from '../../layouts';
 import { BiLoaderCircle } from 'react-icons/bi';
+import Image from 'next/image';
+import { ProductReviews, RelatedProducts } from '../../components/catalog';
 
 const ProductPage = () => {
   const router = useRouter();
@@ -33,11 +35,13 @@ const ProductPage = () => {
     );
   }
 
-  const { id, title, description, price, image } = product;
+  const { id, title, description, price, image, rating, category } = product;
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   }).format(price);
+
+  const { rate, count } = rating;
 
   return (
     <>
@@ -48,22 +52,29 @@ const ProductPage = () => {
       <Layout>
         <main>
           <header className="container px-4 lg:px-0 mx-auto flex justify-between">
-            <div></div>
+            <div>
+              <ContinueShopping></ContinueShopping>
+            </div>
 
             <CartControl></CartControl>
           </header>
 
-          <section className="mt-16 container px-4 lg:px-0 mx-auto grid gap-8 grid-cols-12">
-            <div className="col-start-1 col-span-5">
-              <img
+          <section className="mt-16 mb-32 container px-4 lg:px-0 mx-auto grid gap-8 lg:grid-cols-12">
+            <div className="lg:col-start-1 lg:col-span-5">
+              <Image
                 src={image}
+                width={700}
+                height={700}
+                objectFit="contain"
                 alt={`Image for product ${title}`}
-                className="block w-full"
-              ></img>
+              ></Image>
             </div>
 
-            <header className="col-start-7 col-span-6 pt-12">
+            <header className="lg:col-start-7 lg:col-span-6 pt-12 flex flex-col items-center justify-center lg:items-start lg:justify-start">
               <h1 className="text-2xl uppercase font-medium">{title}</h1>
+
+              <ProductReviews rate={rate} count={count}></ProductReviews>
+
               <p className="mt-12">{description}</p>
 
               <div className="mt-12">
@@ -74,7 +85,7 @@ const ProductPage = () => {
 
               <div className="mt-12">
                 <button
-                  className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-800 transition-colors"
+                  className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-600 transition-colors"
                   title={`Add ${title} to cart`}
                   type="button"
                   onClick={() => {
@@ -87,7 +98,12 @@ const ProductPage = () => {
             </header>
           </section>
           <section className="border-t"></section>
-          <section className="container px-4 lg:px-0 mx-auto">jos</section>
+          <section className="container px-4 lg:px-0 mx-auto">
+            <RelatedProducts
+              productCategory={category}
+              productId={id}
+            ></RelatedProducts>
+          </section>
         </main>
       </Layout>
     </>

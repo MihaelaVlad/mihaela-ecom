@@ -32,6 +32,7 @@ export const ProductGrid = ({ products = [], perRow = 4 }) => {
             layout="position"
             whileHover={{ scale: 1.1 }}
             key={index}
+            className="flex"
           >
             <ProductTile product={product}></ProductTile>
           </motion.li>

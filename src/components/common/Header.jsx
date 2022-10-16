@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { CgMenu } from 'react-icons/cg';
-import { FaApple } from 'react-icons/fa';
+import { IoLogoOctocat } from 'react-icons/io';
 import { CgFacebook } from 'react-icons/cg';
 import { VscTwitter } from 'react-icons/vsc';
 import { CgGoogle } from 'react-icons/cg';
@@ -15,7 +15,7 @@ export const Header = () => {
       <section className="flex lg:flex-col justify-between items-center h-full z-10 relative lg:py-8">
         <Link href="/">
           <a title="Home" className="transition-colors hover:text-amber-600">
-            <FaApple size="32"></FaApple>
+            <IoLogoOctocat size="32"></IoLogoOctocat>
           </a>
         </Link>
 
