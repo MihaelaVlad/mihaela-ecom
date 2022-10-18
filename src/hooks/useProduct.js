@@ -5,7 +5,7 @@ const productCache = {};
 
 export const useProduct = (pid) => {
   const [product, setProduct] = useState(null);
-  const [status, setStatus] = useState(200);
+  const [status, setStatus] = useState('200');
 
   useEffect(() => {
     if (pid === undefined) {
@@ -24,7 +24,7 @@ export const useProduct = (pid) => {
           setProduct(result);
         })
         .catch((_) => {
-          setStatus(404);
+          setStatus('404');
         });
     }
   }, [pid, setProduct, setStatus]);

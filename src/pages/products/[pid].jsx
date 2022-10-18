@@ -12,7 +12,7 @@ const ProductPage = () => {
   const { pid } = router.query;
   const { product, status } = useProduct(pid);
 
-  if (product === null && status !== '404s') {
+  if (product === null && status !== '404') {
     return (
       <div className="flex h-screen w-screen justify-center items-center">
         <BiLoaderCircle size="48" className="animate-spin"></BiLoaderCircle>
