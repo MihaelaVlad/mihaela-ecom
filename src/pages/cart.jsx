@@ -5,6 +5,7 @@ import {
   CartItems,
   CartVoucher,
   ContinueShopping,
+  UpdateCArt,
 } from '../components/cart';
 import { useCart } from '../hooks';
 import { Layout } from '../layouts';
@@ -41,7 +42,7 @@ const Cart = () => {
       </Head>
 
       <Layout>
-        <main className="container px-4 lg:px-0 mx-auto">
+        <main className="container px-4 lg:px-0 mx-auto mb-12">
           <header className="flex justify-between text-zinc-400">
             <div>
               <ContinueShopping></ContinueShopping>
@@ -50,10 +51,14 @@ const Cart = () => {
             <CartControl cart={cart}></CartControl>
           </header>
 
-          <section className="mt-16 grid grid-cols-12 gap-8">
-            <div className="col-span-8">
+          <section className="mt-16 grid lg:grid-cols-12 gap-8">
+            <div className="col-span-8 grid gap-y-12">
               <CartItems></CartItems>
-              <CartVoucher></CartVoucher>
+
+              <div className="flex items-center justify-between">
+                <CartVoucher></CartVoucher>
+                <UpdateCArt></UpdateCArt>
+              </div>
             </div>
 
             <aside className="col-span-4">

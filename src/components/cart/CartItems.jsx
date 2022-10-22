@@ -18,12 +18,12 @@ export const CartItems = () => {
   return (
     <>
       <table>
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
+        <thead className="border-b p-3 h-12">
+          <tr className="uppercase text-gray-400">
+            <th className="font-normal px-2">Product</th>
+            <th className="font-normal px-2">Price</th>
+            <th className="font-normal px-2">Quantity</th>
+            <th className="font-normal px-2">Total</th>
           </tr>
         </thead>
 

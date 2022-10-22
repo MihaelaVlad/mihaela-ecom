@@ -21,7 +21,17 @@ const ProductPage = () => {
   }
 
   if (status === '404') {
-    return <span>Product not found</span>;
+    return (
+      <div className="flex flex-col items-center justify-center w-screen h-screen gap-7">
+        <span className="font-bold text-9xl text-amber-600">404</span>
+
+        <span className="font-medium text-2xl">Product not found</span>
+
+        <p>The product you are looking for does not exist!</p>
+
+        <ContinueShopping></ContinueShopping>
+      </div>
+    );
   }
 
   const { id, title, description, price, image, rating, category } = product;
