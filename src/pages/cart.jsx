@@ -52,16 +52,16 @@ const Cart = () => {
           </header>
 
           <section className="mt-16 grid lg:grid-cols-12 gap-8">
-            <div className="col-span-8 grid gap-y-12">
+            <div className="lg:col-span-8 grid gap-y-12">
               <CartItems></CartItems>
 
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col lg:flex-row gap-3 items-center justify-between">
                 <CartVoucher></CartVoucher>
                 <UpdateCArt></UpdateCArt>
               </div>
             </div>
 
-            <aside className="col-span-4">
+            <aside className="lg:col-span-4">
               <CartTotals></CartTotals>
             </aside>
           </section>

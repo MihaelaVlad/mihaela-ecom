@@ -15,7 +15,7 @@ export const CartVoucher = () => {
           name="submitVoucher"
           id="submitVoucher"
           title="Apply Coupon"
-          className="border-2 border-black bg-transparent transition-colors hover:bg-amber-600 hover:border-amber-600 hover:text-white py-2 px-8"
+          className="border-2 border-black bg-transparent transition-colors hover:bg-amber-600 hover:border-amber-600 hover:text-white py-2 px-2 lg:px-8"
         >
           Apply Coupon
         </button>
