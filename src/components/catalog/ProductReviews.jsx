@@ -3,6 +3,9 @@ import { HiStar } from 'react-icons/hi';
 export const ProductReviews = ({ rate, count }) => {
   const totalRating = 5;
   const userRateCounting = Math.floor(rate);
+  const pluralize = (count, { one, many }) => {
+    return `${count} ${count > 1 ? many : one}`;
+  };
 
   return (
     <section className="flex items-center justify-center">
@@ -25,7 +28,12 @@ export const ProductReviews = ({ rate, count }) => {
           );
         })}
 
-      <span className="ml-4">{userRateCounting} Stars</span>
+      <span className="ml-4">
+        {pluralize(userRateCounting, {
+          one: 'Star',
+          many: 'Stars',
+        })}
+      </span>
       <span className="ml-4">({count} Reviwes)</span>
     </section>
   );

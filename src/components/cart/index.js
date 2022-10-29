@@ -5,3 +5,4 @@ export * from './CartItems';
 export * from './CartVoucher';
 export * from './UpdateCart';
 export * from './Checkout';
+export * from './InfinitePagination';

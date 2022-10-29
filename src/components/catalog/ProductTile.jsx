@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { AddToCart } from './AddToCart';
 
 export const ProductTile = ({ product }) => {
   const { title, price, image, id } = product;
@@ -37,16 +38,7 @@ export const ProductTile = ({ product }) => {
         <div className="text-zinc-900 font-light">{formattedPrice}</div>
 
         <div>
-          <button
-            className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-600 transition-colors"
-            title={`Add ${title} to cart`}
-            type="button"
-            onClick={() => {
-              alert(id);
-            }}
-          >
-            Add to Cart
-          </button>
+          <AddToCart product={product}></AddToCart>
         </div>
       </section>
     </motion.article>

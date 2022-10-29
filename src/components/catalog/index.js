@@ -4,3 +4,4 @@ export * from './Pagination';
 export * from './ProductTile';
 export * from './ProductReviews';
 export * from './RelatedProducts';
+export * from './AddToCart';

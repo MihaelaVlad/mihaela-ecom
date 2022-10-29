@@ -4,7 +4,11 @@ import { CartControl, ContinueShopping } from '../../components/cart';
 import { Layout } from '../../layouts';
 import { BiLoaderCircle } from 'react-icons/bi';
 import Image from 'next/image';
-import { ProductReviews, RelatedProducts } from '../../components/catalog';
+import {
+  AddToCart,
+  ProductReviews,
+  RelatedProducts,
+} from '../../components/catalog';
 import { useProduct } from '../../hooks';
 
 const ProductPage = () => {
@@ -83,16 +87,7 @@ const ProductPage = () => {
               </div>
 
               <div className="mt-12">
-                <button
-                  className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-600 transition-colors"
-                  title={`Add ${title} to cart`}
-                  type="button"
-                  onClick={() => {
-                    alert(id);
-                  }}
-                >
-                  Add to Cart
-                </button>
+                <AddToCart product={product}></AddToCart>
               </div>
             </header>
           </section>

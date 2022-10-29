@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useProduct } from '../../hooks';
 import { ProductReviews } from '../catalog';
+import { CgClose } from 'react-icons/cg';
 
 export const CartLineItem = ({ product }) => {
   const { quantity, productId } = product;
@@ -27,6 +28,9 @@ export const CartLineItem = ({ product }) => {
 
   return (
     <tr className="border-b">
+      <td>
+        <CgClose size="22"></CgClose>
+      </td>
       <td className="py-4 px-2 flex">
         <Link href={`/products/${id}`}>
           <a title={title}>

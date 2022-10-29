@@ -1,10 +1,6 @@
-import { useContext } from 'react';
-import { AppContext } from '../../pages/_app';
 import { Checkout } from './Checkout';
 
 export const CartTotals = () => {
-  const { cart } = useContext(AppContext);
-
   return (
     <>
       <header className=" bg-zinc-400 text-white uppercase font-medium p-3">
@@ -45,15 +41,13 @@ export const CartTotals = () => {
             </form>
           </div>
 
-          <div className="border-b py-3">Total: $2,578.7</div>
-
-          <div className=" mt-8">
-            <Checkout></Checkout>
-          </div>
+          <div className="border-b py-3">Total: $12,741.8</div>
         </div>
       </section>
 
-      <footer></footer>
+      <footer className=" mt-8">
+        <Checkout></Checkout>
+      </footer>
     </>
   );
 };

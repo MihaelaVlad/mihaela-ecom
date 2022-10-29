@@ -1,4 +1,9 @@
+import { useContext } from 'react';
+import { AppContext } from '../../pages/_app';
+
 export const Checkout = () => {
+  const { cart } = useContext(AppContext);
+
   return (
     <div className="flex">
       <button
@@ -7,6 +12,9 @@ export const Checkout = () => {
         title="Proceed to checkout"
         id="checkout"
         name="checkout"
+        onClick={() => {
+          console.log(cart);
+        }}
       >
         Proceed to checkout
       </button>

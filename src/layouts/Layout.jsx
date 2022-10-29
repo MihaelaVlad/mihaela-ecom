@@ -48,6 +48,7 @@ export const Layout = ({ children }) => {
   `;
 
   const footerCss = css`
+    margin-top: 100px;
     background-color: ${gray};
   `;
 
