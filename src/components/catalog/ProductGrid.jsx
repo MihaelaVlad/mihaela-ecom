@@ -25,13 +25,13 @@ export const ProductGrid = ({ products = [], perRow = 4 }) => {
 
   return (
     <ul className={gridCss}>
-      {products.map((product, index) => {
+      {products.map((product) => {
         return (
           <motion.li
             animate={{ opacity: 1 }}
             layout="position"
             whileHover={{ scale: 1.1 }}
-            key={index}
+            key={product.id}
             className="flex"
           >
             <ProductTile product={product}></ProductTile>

@@ -73,24 +73,25 @@ const ProductPage = () => {
               ></Image>
             </div>
 
-            <header className="lg:col-start-7 lg:col-span-6 pt-12 flex flex-col items-center justify-center lg:items-start lg:justify-start">
-              <h1 className="text-2xl uppercase font-medium">{title}</h1>
+            <div className="lg:col-start-7 lg:col-span-6 pt-12 flex flex-col items-center justify-center lg:items-start lg:justify-start">
+              <header className=" flex flex-col items-center justify-center lg:items-start lg:justify-start">
+                <h1 className="text-2xl uppercase font-medium">{title}</h1>
 
-              <ProductReviews rate={rate} count={count}></ProductReviews>
+                <ProductReviews rate={rate} count={count}></ProductReviews>
+              </header>
 
-              <p className="mt-12">{description}</p>
+              <div className="mt-12">{description}</div>
 
-              <div className="mt-12">
-                <span className="text-3xl leading-9 font-bold">
-                  {formattedPrice}
-                </span>
-              </div>
+              <span className="text-3xl leading-9 font-bold mt-12">
+                {formattedPrice}
+              </span>
 
               <div className="mt-12">
                 <AddToCart product={product}></AddToCart>
               </div>
-            </header>
+            </div>
           </section>
+
           <section className="border-t"></section>
           <section className="container px-4 lg:px-0 mx-auto">
             <RelatedProducts

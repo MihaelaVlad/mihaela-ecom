@@ -7,11 +7,16 @@ import {
   ContinueShopping,
   UpdateCArt,
 } from '../components/cart';
-import { useCart } from '../hooks';
+import { useCart, useIsMobile } from '../hooks';
 import { Layout } from '../layouts';
 
 const Cart = () => {
   const cart = useCart(2);
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return <></>;
+  }
 
   if (cart === null) {
     return (

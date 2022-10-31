@@ -44,43 +44,47 @@ export const RelatedProducts = ({ productCategory, productId }) => {
           }
 
           return (
-            <motion.article className="w-full" layout="position" key={id}>
-              <header>
-                <div className="w-full text-center">
-                  <Link href={`/products/${id}`}>
-                    <a title={title}>
-                      <Image
-                        alt={`Image for product ${title}`}
-                        src={image}
-                        width={200}
-                        height={200}
-                        objectFit="contain"
-                        className="inline"
-                      ></Image>
-                    </a>
-                  </Link>
-                </div>
-              </header>
+            <motion.li className="w-full" layout="position" key={id}>
+              <article>
+                <header>
+                  <div className="w-full text-center">
+                    <Link href={`/products/${id}`}>
+                      <a title={title}>
+                        <Image
+                          alt={`Image for product ${title}`}
+                          src={image}
+                          width={200}
+                          height={200}
+                          objectFit="contain"
+                          className="inline"
+                        ></Image>
+                      </a>
+                    </Link>
+                  </div>
+                </header>
 
-              <section className="mt-8 text-center text-sm flex flex-col items-center justify-between gap-4">
-                <h1 className="uppercase text-zinc-400 mb-2">{title}</h1>
+                <section className="mt-8 text-center text-sm flex flex-col items-center justify-between gap-4">
+                  <h1 className="uppercase text-zinc-400 mb-2">{title}</h1>
 
-                <div className="text-zinc-900 font-light">{formattedPrice}</div>
+                  <div className="text-zinc-900 font-light">
+                    {formattedPrice}
+                  </div>
 
-                <div>
-                  <button
-                    className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-600 transition-colors"
-                    title={`Add ${title} to cart`}
-                    type="button"
-                    onClick={() => {
-                      alert(id);
-                    }}
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              </section>
-            </motion.article>
+                  <div>
+                    <button
+                      className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-600 transition-colors"
+                      title={`Add ${title} to cart`}
+                      type="button"
+                      onClick={() => {
+                        alert(id);
+                      }}
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </section>
+              </article>
+            </motion.li>
           );
         })}
       </ul>

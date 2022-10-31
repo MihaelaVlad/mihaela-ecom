@@ -3,11 +3,14 @@ import Image from 'next/image';
 import { useProduct } from '../../hooks';
 import { ProductReviews } from '../catalog';
 import { CgClose } from 'react-icons/cg';
+import { useContext } from 'react';
+import { AppContext } from '../../pages/_app';
 
 export const CartLineItem = ({ product }) => {
   const { quantity, productId } = product;
   const { product: cartItem } = useProduct(productId);
   const isLoaded = cartItem !== null;
+  const { alterProduct } = useContext(AppContext);
 
   if (!isLoaded) {
     return <></>;
@@ -56,7 +59,31 @@ export const CartLineItem = ({ product }) => {
         </div>
       </td>
       <td className="text-center px-2">{formattedPrice}</td>
-      <td className="text-center px-2">{quantity}</td>
+      <td className="text-center px-2">
+        <div className="border border-black">
+          <button
+            type="button"
+            title="Decrease"
+            className="p-2"
+            onClick={() => {
+              alterProduct(id, -1);
+            }}
+          >
+            -
+          </button>
+          {quantity}
+          <button
+            type="button"
+            title="Increase"
+            className="p-2"
+            onClick={() => {
+              alterProduct(id, 1);
+            }}
+          >
+            +
+          </button>
+        </div>
+      </td>
       <td className="text-center px-2">{formattedTotalPrice}</td>
     </tr>
   );
