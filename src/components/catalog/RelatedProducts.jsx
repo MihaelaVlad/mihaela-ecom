@@ -3,6 +3,7 @@ import { baseUrl } from '../..';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { AddToCart } from './AddToCart';
 
 export const RelatedProducts = ({ productCategory, productId }) => {
   const [products, setProducts] = useState(null);
@@ -71,16 +72,7 @@ export const RelatedProducts = ({ productCategory, productId }) => {
                   </div>
 
                   <div>
-                    <button
-                      className="bg-black text-white uppercase font-medium text-sm py-3 px-6 hover:bg-amber-600 transition-colors"
-                      title={`Add ${title} to cart`}
-                      type="button"
-                      onClick={() => {
-                        alert(id);
-                      }}
-                    >
-                      Add to Cart
-                    </button>
+                    <AddToCart product={product}></AddToCart>
                   </div>
                 </section>
               </article>
