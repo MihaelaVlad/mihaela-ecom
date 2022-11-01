@@ -14,9 +14,9 @@ const Cart = () => {
   const cart = useCart(2);
   const isMobile = useIsMobile();
 
-  if (isMobile) {
-    return <></>;
-  }
+  // if (isMobile) {
+  //   return <></>;
+  // }
 
   if (cart === null) {
     return (
