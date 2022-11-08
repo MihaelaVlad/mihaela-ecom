@@ -86,14 +86,17 @@ const ProductPage = () => {
                 {formattedPrice}
               </span>
 
-              <div className="mt-12">
+              <footer className="mt-12">
                 <AddToCart product={product}></AddToCart>
-              </div>
+              </footer>
             </div>
           </section>
 
           <section className="border-t"></section>
-          <section className="container px-4 lg:px-0 mx-auto">
+          <section className="container px-4 lg:px-0 mx-auto mt-16"></section>
+
+          <section className="border-t"></section>
+          <section className="container px-4 lg:px-0 mx-auto mt-16">
             <RelatedProducts
               productCategory={category}
               productId={id}

@@ -28,7 +28,7 @@ export const RelatedProducts = ({ productCategory, productId }) => {
 
   return (
     <section className="flex flex-col gap-5 mb-16">
-      <h1 className="text-center uppercase font-medium text-lg">
+      <h1 className="text-center uppercase font-medium text-xl">
         Related Products
       </h1>
 
